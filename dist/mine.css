@@ -1,0 +1,12 @@
+blockquote cite {
+  display: block;
+  text-align: right;
+  margin-top: .2em;
+
+  font-style: italic;
+  font-size: .8em;
+}
+
+blockquote cite::before {
+  content: '—';
+}
