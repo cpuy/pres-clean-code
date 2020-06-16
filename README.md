@@ -1,4 +1,4 @@
+https://cpuy.github.io/pres-clean-code/
 
-
-# Refenrences
+# References
 * https://slides.com/dave_losert/clean-code
