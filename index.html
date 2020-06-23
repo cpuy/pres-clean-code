@@ -164,7 +164,35 @@
                     <li>have no fear to throw things away</li>
                 </ul>
             </section>
+
+            <section>
+                <h3>TIP #1: Show intent</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                    if((e.startDate <= new Date() || e.endDate >= new Date())) {
+                    // do something
+                    }
+                    </code>
+                </pre>
+                VS
+                <pre>
+                    <code data-trim data-noescape>
+                    if(eventIsToday(e))) {
+                        // do something
+                    }
+
+                    // ...
+
+                    const today = new Date();
+                    const eventIsToday = (event) =>
+                        event.startDate <= today && event.endDate >= today
+                    </code>
+                </pre>
+            </section>
+
+
         </section>
+
 
     </div>
 </div>
