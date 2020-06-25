@@ -52,3 +52,7 @@ blockquote cite::before {
   width: auto;
 }
 
+.reveal pre {
+  font-size: 0.35em;
+  margin: 0 auto;
+}

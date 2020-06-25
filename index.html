@@ -34,7 +34,7 @@
                 <li>Why?</li>
                 <li>Sidetrack</li>
                 <li>Rules</li>
-                <li>Tips</li>
+                <li>How?</li>
             </ul>
         </section>
         <section>
@@ -157,7 +157,7 @@
         </section>
 
         <section>
-            <section><h1>Tips</h1></section>
+            <section><h1>How?</h1></section>
             <section>
                 <h2>Take the time to go fast!</h2>
                 <ul>
@@ -166,6 +166,33 @@
                     <li>take baby steps</li>
                     <li>have no fear to throw things away</li>
                 </ul>
+            </section>
+
+            <section>
+                <h3>TIP #2: USE REVEALING NAMES</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                        function eventHandler() {
+                            if(!$(this).hasClass(('ext')){
+                               $(this).animate({width: 120};
+                            }
+                         }
+                    </code>
+                </pre>
+                VS
+                <pre>
+                    <code data-trim data-noescape>
+                        function enlargeLink() {
+                            let linkElement = $(this);
+                            if(!isExtended(linkElement)){
+                               enlarge(linkElement);
+                            }
+                         }
+
+                        const isExtended = (element) => element.hasClass('ext')
+                        const enlarge = (element) => element.animate({width: 120})
+                    </code>
+                </pre>
             </section>
 
             <section>
@@ -194,6 +221,57 @@
             </section>
 
 
+            <section>
+                <h3>TIP #7: MAKE IT READ LIKE A BOOK</h3>
+                <div><pre>
+                    <code data-trim data-noescape>
+                        function login(username, password) {
+                            fetch('/login', {
+                                method: post,
+                                body: {
+                                    username,
+                                    password
+                                }
+                            }).then(() => {
+                                window.location = '/app';
+
+                            }).catch(() => {
+                                window.location = '/error';
+                            })
+                         }
+                    </code>
+                </pre>
+                    VS
+                    <pre class="javascript">
+                    <code data-trim>
+                        function login(username, password) {
+                            requestToken(username, password)
+                                .then(redirectToApp)
+                                .catch(redirectToError);
+                         }
+
+                        const requestToken = (username, password) =>
+                            fetch('/login', { method: 'POST', body: {username, password} });
+
+                        const redirectToApp = () => window.location = '/app';
+                        const redirectToError = () => window.location = '/error';
+                    </code>
+                </pre>
+                </div>
+            </section>
+
+            <section>
+                <h3>TIP #5: AVOID COMMENTS</h3>
+
+            </section>
+
+            <section>
+                <h3>TIP #6: SERIOUSLY: AVOID COMMENTS - THEY TEND TO LIE!</h3>
+            </section>
+
+            <section>
+                <h3>TIP #8...N: READ THE BOOK</h3>
+            </section>
         </section>
 
 
