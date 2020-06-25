@@ -261,7 +261,47 @@
             </section>
 
             <section>
-                <h3>TIP #4: AVOID COMMENTS</h3>
+                <h3>TIP #4: REMOVE CODE DUPLICATION</h3>
+                <pre>
+                    <code data-trim data-noescape>
+function enlargeOrShrink(button) {
+    if(button.hasClass('ext')) {
+        button.animate({width: 20, speed: 200, type: 'slide'});
+    } else {
+        button.animate({width: 120, speed: 200, type: 'slide'});
+    }
+ }
+                    </code>
+                </pre>
+                <pre>
+                    <code data-trim data-noescape>
+function enlargeOrShrink(button) {
+    if(button.hasClass('ext')) {
+        expandTo(button, 20);
+    } else {
+        expandTo(button, 120);
+    }
+ }
+
+const expandTo = (element, width) =>
+    element.animate({width: width, speed: 200, type: 'slide'});
+                    </code>
+                </pre>
+                <pre>
+                    <code data-trim data-noescape>
+function enlargeOrShrink(button) {
+    let width = button.hasClass('ext') ? 20 : 120;
+    expandTo(button, width);
+ }
+
+const expandTo = (element, width) =>
+    element.animate({width: width, speed: 200, type: 'slide'});
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h3>TIP #5: AVOID COMMENTS</h3>
                 <pre>
                     <code data-trim data-noescape>
                     // If event is today
@@ -287,7 +327,7 @@
             </section>
 
             <section>
-                <h3>TIP #5: SERIOUSLY: AVOID COMMENTS - THEY TEND TO LIE!</h3>
+                <h3>TIP #6: SERIOUSLY: AVOID COMMENTS - THEY TEND TO LIE!</h3>
                 <pre>
                     <code data-trim data-noescape>
                         /**
@@ -302,20 +342,20 @@
             </section>
 
             <section data-auto-animate>
-                <h3>TIP #6: Classes / Functions</h3>
+                <h3>TIP #7: Classes / Functions</h3>
                 <ul>
                     <li>Should be small</li>
                 </ul>
             </section>
             <section data-auto-animate>
-                <h3>TIP #6: Classes / Functions</h3>
+                <h3>TIP #7: Classes / Functions</h3>
                 <ul>
                     <li>Should be small</li>
                     <li>Should be smaller than that</li>
                 </ul>
             </section>
             <section data-auto-animate>
-                <h3>TIP #6: Classes / Functions</h3>
+                <h3>TIP #7: Classes / Functions</h3>
                 <div class="space-around">
                     <ul>
                         <li>Should be small</li>
