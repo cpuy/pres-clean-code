@@ -169,7 +169,7 @@
             </section>
 
             <section>
-                <h3>TIP #2: USE REVEALING NAMES</h3>
+                <h3>TIP #1: USE REVEALING NAMES</h3>
                 <pre>
                     <code data-trim data-noescape>
                         function eventHandler() {
@@ -196,7 +196,7 @@
             </section>
 
             <section>
-                <h3>TIP #1: Show intent</h3>
+                <h3>TIP #2: Show intent</h3>
                 <pre>
                     <code data-trim data-noescape>
                     if((e.startDate <= new Date() || e.endDate >= new Date())) {
@@ -222,7 +222,7 @@
 
 
             <section>
-                <h3>TIP #7: MAKE IT READ LIKE A BOOK</h3>
+                <h3>TIP #3: MAKE IT READ LIKE A BOOK</h3>
                 <div><pre>
                     <code data-trim data-noescape>
                         function login(username, password) {
@@ -261,16 +261,73 @@
             </section>
 
             <section>
-                <h3>TIP #5: AVOID COMMENTS</h3>
+                <h3>TIP #4: AVOID COMMENTS</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                    // If event is today
+                    if((e.startDate <= new Date() || e.endDate >= new Date())) {
+                    // do something
+                    }
+                    </code>
+                </pre>
+                VS
+                <pre>
+                    <code data-trim data-noescape>
+                    if(eventIsToday(e))) {
+                        // do something
+                    }
 
+                    // ...
+
+                    const today = new Date();
+                    const eventIsToday = (event) =>
+                        event.startDate <= today && event.endDate >= today
+                    </code>
+                </pre>
             </section>
 
             <section>
-                <h3>TIP #6: SERIOUSLY: AVOID COMMENTS - THEY TEND TO LIE!</h3>
+                <h3>TIP #5: SERIOUSLY: AVOID COMMENTS - THEY TEND TO LIE!</h3>
+                <pre>
+                    <code data-trim data-noescape>
+                        /**
+                         * This function returns the final controlPoints array when a ruler
+                         * has been drawn entirely
+                         */
+                        static isFinished(controlPoints: array): boolean {
+                          return controlPoints && controlPoints.length === 2
+                        }
+                    </code>
+                </pre>
+            </section>
+
+            <section data-auto-animate>
+                <h3>TIP #6: Classes / Functions</h3>
+                <ul>
+                    <li>Should be small</li>
+                </ul>
+            </section>
+            <section data-auto-animate>
+                <h3>TIP #6: Classes / Functions</h3>
+                <ul>
+                    <li>Should be small</li>
+                    <li>Should be smaller than that</li>
+                </ul>
+            </section>
+            <section data-auto-animate>
+                <h3>TIP #6: Classes / Functions</h3>
+                <div class="space-around">
+                    <ul>
+                        <li>Should be small</li>
+                        <li>Should be smaller than that</li>
+                        <li>SRP / Should do one thing</li>
+                    </ul>
+                    <img src="/dist/img/cowboy.png" alt=""></div>
             </section>
 
             <section>
                 <h3>TIP #8...N: READ THE BOOK</h3>
+                <img src="/dist/img/cleancode.jpg" alt="Clean code book">
             </section>
         </section>
 

@@ -56,3 +56,8 @@ blockquote cite::before {
   font-size: 0.35em;
   margin: 0 auto;
 }
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
